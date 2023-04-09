@@ -25,14 +25,14 @@
                 if (!$conn) {
                     echo "<br>" . "Error: Không thể kết nối với cơ sở dữ liệu.";
                 } else {
-                    echo "<br>" . "Đã kết nối với CSDL.";
+                    echo "<br>" . "Đã kết nối với CSDL." . "<br>";
                 }
 
                 $sql = "DELETE FROM b1910013_qlsv WHERE id='$id'";
 
                 if (mysqli_query($conn, $sql)) {
                     echo "<br>" . "Xoá sinh viên thành công.";
-                    echo "<script>alert('Xoá sinh viên thành công.'); window.location.href='index.php';</script>";
+                    echo "<script>alert('Xoá sinh viên thành công.');</script>";
                 } else {
                     echo "ERROR: Không thể thực thi $sql. " . mysqli_error($conn) . "<br>";
                     echo "<script>alert('Không thể tạo bảng.');</script>";
@@ -41,6 +41,6 @@
             }
         ?>
         <!-- Thêm thẻ HTML để tạo liên kết trở về trang index.php -->
-        <a href="index.php">Quay lại trang chủ</a> <br>
+        <br> <a href="index.php">Quay lại trang chủ</a> <br>
     </body>
 </html>

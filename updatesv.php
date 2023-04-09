@@ -6,14 +6,15 @@
     <body>
         <h3> Cập nhật thông tin sinh viên </h3>
         <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" class="border">
+            ID<BR> <input type="text" name="id" value ="<?php echo isset($_POST['id']) ? $_POST['id'] : ''; ?>"><BR>
             Họ và tên<BR> <input type="text" name="name" value ="<?php echo $name;?>"><BR>
             Năm sinh<BR> <input type="text" name="birthday" value ="<?php echo $birthday ?>"><BR>
             Email<BR> <input type="text" name="email" value ="<?php echo $email ?>"><BR>
             <input type="submit" name="submit" value="submit">
         </form> 
         <?php
-            $id = "";
             if($_SERVER["REQUEST_METHOD"] == "POST") {
+                $id=$_POST["id"];
                 $name = $_POST["name"];
                 $birthday = $_POST["birthday"];
                 $email = $_POST["email"];
@@ -29,7 +30,7 @@
                 if (!$conn) {
                     echo "<br>" . "Error: Không thể kết nối với cơ sở dữ liệu.";
                 } else {
-                    echo "<br>" . "Đã kết nối với CSDL.";
+                    echo "<br>" . "Đã kết nối với CSDL." . "<br>";
                 }
                 
                 $sql = "UPDATE b1910013_qlsv SET ho_ten='$name', nam_sinh='$birthday', email='$email' WHERE id='$id'";
@@ -46,6 +47,6 @@
             }
         ?>
         <!-- Thêm thẻ HTML để tạo liên kết trở về trang index.php -->
-        <a href="index.php">Quay lại trang chủ</a> <br>
+        <br> <a href="index.php">Quay lại trang chủ</a> <br>
     </body>
 </html> 

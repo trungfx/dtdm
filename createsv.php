@@ -19,7 +19,7 @@
 
             // Kiểm tra kết nối
             if ($conn === false) {
-                die("ERROR: Không thể kết nối tới csdl. " . mysqli_connect_error() . "<br>");
+                die("ERROR: Không thể kết nối tới csdl. " . mysqli_connect_error() . "<br><br>");
             }
 
             // Tạo bảng users
@@ -39,6 +39,6 @@
         ?>
 
         <!-- Thêm thẻ HTML để tạo liên kết trở về trang index.php -->
-        <a href="index.php">Quay lại trang chủ</a> <br>
+        <br> <a href="index.php">Quay lại trang chủ</a> <br>
     </body>
 </html>

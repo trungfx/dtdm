@@ -17,7 +17,7 @@
             if (!$conn) {
                 echo "<br>" . "Error: Không thể kết nối với cơ sở dữ liệu.";
             } else {
-                echo "<br>" . "Đã kết nối với CSDL.";
+                echo "<br>" . "Đã kết nối với CSDL." . "<br>";
                 $sql = "SELECT * FROM b1910013_qlsv";
                 $result = mysqli_query($conn, $sql);
 
@@ -32,6 +32,6 @@
             }
         ?>
         <!-- Thêm thẻ HTML để tạo liên kết trở về trang index.php -->
-        <a href="index.php">Quay lại trang chủ</a> <br>
+        <br> <a href="index.php">Quay lại trang chủ</a> <br>
     </body>
 </html>
